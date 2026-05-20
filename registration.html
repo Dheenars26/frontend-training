@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join TechNova - Create your developer profile or registration account to start collaborating with us." />
+    <title>TechNova | Join Our Developer Platform</title>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <section class="registration-container">
+        <h2>Create an Account</h2>
+        <div id="successMessage" class="success-message">Registration successful! Data saved to browser.</div>
+        <form id="registrationForm" novalidate>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" required placeholder="Enter your name">
+                <span class="error-text" id="nameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="example@mail.com">
+                <span class="error-text" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+                <span class="error-text" id="passwordError"></span>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" required>
+                <span class="error-text" id="confirmPasswordError"></span>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+            <fieldset id="genderFieldset">
+                <legend>Gender</legend>
+                <label><input type="radio" name="gender" value="male">Male</label>
+                <label><input type="radio" name="gender" value="female">Female</label>
+                <label><input type="radio" name="gender" value="not-to-disclose">Not to Disclose</label>
+                <span class="error-text" id="genderError"></span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Skills</legend>
+                <label><input type="checkbox" name="skills" value="java">Java</label>
+                <label><input type="checkbox" name="skills" value="react">React</label>
+                <label><input type="checkbox" name="skills" value="node">Node.js</label>
+                <label><input type="checkbox" name="skills" value="html">HTML</label>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select name="Country" id="country">
+                    <option value="">--Select a Country--</option>
+                    <option value="in">India</option>
+                    <option value="us">USA</option>
+                    <option value="uk">UK</option>
+                    <option value="uae">UAE</option>
+                </select>
+                <span class="error-text" id="countryError"></span>
+            </div>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
