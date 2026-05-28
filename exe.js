@@ -284,4 +284,18 @@ try{
     console.log('From Finally')
 }
 console.log("last")
-
+//async
+async function process(){
+  try{
+    const name=await data;
+    const userDetails=await getUserDetails(name);
+    console.log(userDetails);
+    console.log('test')
+}catch(error){
+    console.log(error.message)
+}finally{
+    console.log('From Finally')
+}
+}
+process();
+console.log("last")
