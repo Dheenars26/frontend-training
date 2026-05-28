@@ -219,3 +219,69 @@ let employee=new Employee();
 employee.employeeName='Dheena'
 employee.print()
 
+//error handling
+try{
+console.log(test)
+}catch{
+console.log("error")
+}finally{// compalary run one time
+console.log("finally")
+}
+//promise
+const data =new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    const demo="Dheena";
+    if(demo){
+      resolve(demo);
+    }else{
+      reject(new Error('no data'));
+    }
+  },1000)
+});
+//how to access promise
+data.then((name)=>{
+  console.log(name)
+}).catch((error)=>{
+  console.log(error)
+}).finally(()=>{
+  console.log('Test')
+});
+
+//await
+const data =new Promise((res,rej)=>{
+  setTimeout(()=>{
+    const demo="Dheena";
+    if(demo){
+      res(demo);
+    }else{
+      rej(new Error('no data'));
+    }
+  },1000)
+});
+function getUserDetails(inputName){
+    const userDetails=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("start")
+            let userDetails=[{name:"Dheena",age:22}];
+            const user=userDetails.find(user=>user.name===inputName)
+            if(user){
+                resolve(user);
+            }else{
+                reject("Error")
+            }
+        },1000)
+    })
+    return userDetails
+}
+try{
+    const name=await data;
+    const userDetails=await getUserDetails(name);
+    console.log(userDetails);
+    console.log('test')
+}catch(error){
+    console.log(error.message)
+}finally{
+    console.log('From Finally')
+}
+console.log("last")
+
